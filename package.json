@@ -1,13 +1,15 @@
 {
   "name": "dropbox-transfers",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js utility script to upload files to Dropbox",
   "type": "module",
   "main": "upload.js",
   "scripts": {
     "start": "node upload.js"
   },
-  "keywords": [],
+  "keywords": [
+    "dropbox-api"
+  ],
   "author": "Alvin Bryan",
   "license": "MIT",
   "dependencies": {
