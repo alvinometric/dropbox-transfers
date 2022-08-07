@@ -2,18 +2,19 @@
   "name": "dropbox-transfers",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "upload.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node upload.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alvin Bryan",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "glob": "^7.1.6",
-    "glob-promise": "^3.4.0",
-    "node-fetch": "^2.6.1",
-    "yargs-parser": "^20.2.4"
+    "glob": "^8.0.3",
+    "glob-promise": "^5.0.0",
+    "node-fetch": "^3.2.10",
+    "yargs-parser": "^21.1.1"
   }
 }
