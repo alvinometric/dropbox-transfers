@@ -15,8 +15,6 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "glob": "^8.0.3",
-    "glob-promise": "^5.0.0",
-    "node-fetch": "^3.2.10",
-    "yargs-parser": "^21.1.1"
+    "glob-promise": "^5.0.0"
   }
 }

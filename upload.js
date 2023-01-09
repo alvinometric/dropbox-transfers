@@ -1,17 +1,21 @@
-import 'dotenv/config';
-import { basename } from 'path';
-import fs from 'node:fs/promises';
-import fetch from 'node-fetch';
-import glob from 'glob-promise';
+import 'dotenv/config'
+import { basename } from 'node:path'
+import fs from 'node:fs/promises'
+import glob from 'glob-promise'
 
 const start = async () => {
-  const { TOKEN } = process.env;
-  const files = await glob('temp/*.*');
+  const { TOKEN } = process.env
 
-  const file = files[0];
+  const files = await glob('temp/*.*')
 
-  const data = await fs.readFile(file);
-  console.log('file read', file);
+  const file = files[0]
+
+  if (!file) {
+    throw 'No File Found'
+  }
+
+  const data = await fs.readFile(file)
+  console.log('file read', file)
 
   const res = await fetch('https://content.dropboxapi.com/2/files/upload', {
     method: 'post',
@@ -24,22 +28,22 @@ const start = async () => {
       }),
       'Content-Type': 'application/octet-stream',
     },
-  });
+  })
 
   if (res.ok) {
-    console.log(res.status, res.statusText);
+    console.log(res.status, res.statusText)
   }
 
   // it failed
-  const err = await res.text();
-  throw new Error(err);
-};
+  const err = await res.text()
+  throw new Error(err)
+}
 
 start()
   .then(() => {
-    console.log('File uploaded!');
+    console.log('File uploaded!')
   })
 
   .catch((err) => {
-    console.log(err);
-  });
+    console.log(err)
+  })
